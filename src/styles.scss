@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+#mensajes {
+  height: 300px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 1rem;
+  overflow-y: scroll;
+}
+
 footer {
   position: fixed;
   width: 100%;

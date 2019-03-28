@@ -10,14 +10,20 @@ import { Subscription } from 'rxjs';
 export class ChatComponent implements OnInit, OnDestroy {
 
   texto = '';
-
   mensajesSubscription: Subscription;
+  mensajes: any[] = [];
+
+  elemento: HTMLElement;
 
   constructor( private chatService: ChatService ) { }
 
   ngOnInit() {
+    this.elemento = document.getElementById('mensajes');
     this.mensajesSubscription = this.chatService.getMessage().subscribe( msg => {
-      console.log(msg);
+      this.mensajes.push(msg);
+      setTimeout(() => {
+        this.elemento.scrollTop = this.elemento.scrollHeight;
+      }, 50);
     });
   }
 
