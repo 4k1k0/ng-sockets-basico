@@ -6,17 +6,19 @@ import { environment } from '../environments/environment';
 
 // Sockets
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
 const config: SocketIoConfig = {
-  url: environment.wsUrl,
-  options: {}
+  url: environment.wsUrl , options: {}
 };
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
