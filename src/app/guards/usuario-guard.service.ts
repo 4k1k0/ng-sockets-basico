@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { WebsocketService } from '../services/websocket.service';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioGuard {
+export class UsuarioGuard implements CanActivate {
 
   constructor(
     public wsService: WebsocketService,
